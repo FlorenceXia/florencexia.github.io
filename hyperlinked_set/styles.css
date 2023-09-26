@@ -1,0 +1,50 @@
+body {
+    overflow: hidden;
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    text-decoration: none;  /* 去掉超链接的下划线 */
+}
+
+.back-position {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    bottom: auto;
+}
+
+@keyframes fly {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 100vh;
+    }
+}
+
+a {
+    color: inherit;
+}
+
+/* 样式化所有按钮 */
+button.btn.btn-light {
+    background-color: white;
+    color: black;
+}
