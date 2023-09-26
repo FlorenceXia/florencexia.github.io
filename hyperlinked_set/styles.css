@@ -9,7 +9,11 @@ body {
     width: 100vw;
     height: 100vh;
 }
+h1 {
+    font-family: 'Proxima Nova', sans-serif;  
+    font-size: 40px; 
 
+}
 .button {
     position: absolute;
     bottom: 0;
@@ -17,10 +21,12 @@ body {
     color: white;
     border: none;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 20px 40px;  
     cursor: pointer;
     font-family: Arial, sans-serif;
-    text-decoration: none;  /* 去掉超链接的下划线 */
+    text-decoration: none;
+    font-family: 'Proxima Nova', sans-serif;  
+    font-size: 20px; 
 }
 
 .back-position {
@@ -43,8 +49,11 @@ a {
     color: inherit;
 }
 
-/* 样式化所有按钮 */
 button.btn.btn-light {
+    border-radius: 20px;
+    padding: 20px 40px;  
     background-color: white;
     color: black;
+    font-family: 'Proxima Nova', sans-serif;  
+    font-size: 20px;  
 }
