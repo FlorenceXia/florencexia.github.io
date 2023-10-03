@@ -1,43 +1,53 @@
 const container = document.querySelector(".container");
 const buttonData = [{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1RL41187N7"
+		url: "https://www.youtube.com/watch?v=-ZGA6oZzdsU",
+		description: "Best Funniest Cats 😹 - Don't try to hold back Laughter 😂 Funny Cats 2023 #7"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1Su411H76u"
+		url: "https://www.youtube.com/watch?v=SB-qEYVdvXA",
+		description: "So many cute kittens videos compilation 2023"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1wk4y1H7nq"
+		url: "https://www.youtube.com/watch?v=M6vVTZglSzM",
+		description: "A DAY IN THE LIFE OF A CAT"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1gf4y1Z7mB"
+		url: "https://www.youtube.com/watch?v=4miSy-4PEAM",
+		description: "Three little Teddy kittens | Cutest Baby British kittens"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1hM4y1t7tz"
+		url: "https://www.youtube.com/watch?v=y0sF5xhGreA",
+		description: "20 Minutes of Adorable Kittens 😍 | BEST Compilation"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1ZV4y1Y7bt"
+		url: "https://www.youtube.com/watch?v=NsUWXo8M7UA",
+		description: "Funny Cats Compilation (Most Popular) Part 2"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1mt4y1N74o"
+		url: "https://www.youtube.com/watch?v=QtC3Bo9B0yI",
+		description: "THE BEST CUTE AND FUNNY CAT VIDEOS OF 2019! 🐱"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1iW4y1y7ko"
+		url: "https://www.youtube.com/watch?v=GTUruS-lnEo",
+		description: "Off to the Vet (Full Film in COLOUR) I A Simon’s Cat SPECIAL"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1NX4y1d7d7"
+		url: "https://www.youtube.com/watch?v=ZH9OzGuSudM",
+		description: "What Can't Cats Walk On? #36"
 	},
 	{
 		text: "Cat",
-		url: "https://www.bilibili.com/video/BV1wu411N74K"
+		url: "https://www.youtube.com/watch?v=-YO14FM76lY",
+		description: "Most Viral Cats of the Internet | FUNNIEST videos 😂"
 	}
 ];
 
@@ -81,13 +91,43 @@ function createButton(data) {
     btn.style.backgroundColor = getRandomColor();
 
     container.appendChild(btn);
+
+	const descriptionPreview = document.createElement('div');
+    descriptionPreview.innerText = data.description; // 使用预先定义的描述
+    descriptionPreview.className = "preview";
+    descriptionPreview.style.display = 'none';
+    container.appendChild(descriptionPreview);
+
+ 	// 当鼠标悬停在按钮上时的处理
+    btn.onmouseover = function() {
+        // 停止按钮的动画
+        this.style.animationPlayState = 'paused';
+        
+        // 提高按钮的z-index
+        this.style.zIndex = '1000';
+        
+        // 显示描述预览
+        descriptionPreview.style.display = 'block';
+        descriptionPreview.style.left = `${this.getBoundingClientRect().right + 10}px`; // 在按钮右侧展示，并留有10px的间距
+        descriptionPreview.style.top = `${this.getBoundingClientRect().top}px`;  // 与按钮垂直对齐
+    };
+
+    // 当鼠标离开按钮时的处理
+    btn.onmouseout = function() {
+        // 恢复按钮的动画和z-index
+        this.style.animationPlayState = 'running';
+        this.style.zIndex = '1';  // 将z-index重置回一个较低的值
+        
+        // 隐藏描述预览
+        descriptionPreview.style.display = 'none';
+    };
 }
 
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 const containerArea = screenWidth * screenHeight * 0.8;
 const averageButtonArea = 100 * 50; 
-const buttonCount = Math.ceil(containerArea / averageButtonArea);
+const buttonCount = 0.8*Math.ceil(containerArea / averageButtonArea);
 
 for (let i = 0; i < buttonCount; i++) {
 	const index = i % buttonData.length;

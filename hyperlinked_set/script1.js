@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const intervalId = setInterval(drawRandomText, 500);  
+    const intervalId = setInterval(drawRandomText, 200);  
     setTimeout(function() {
         clearInterval(intervalId); 
     }, 60000); 
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function drawRandomText() {
     const textArray1 = ["WHY","IS","CAT","EVERYWHERE"];
 
-    const x = Math.random() * (window.innerWidth - 250);  
-    const y = Math.random() * (window.innerHeight - 60); 
+    const x = Math.random() * (window.innerWidth);  
+    const y = Math.random() * (window.innerHeight); 
 
     const div = document.createElement('div');
     const p = document.createElement('p');
