@@ -68,16 +68,14 @@ function createButton(data) {
     btn.className = "button";
     btn.innerText = data.text;
     btn.href = data.url;
-    btn.target = "_blank"; // 如果你希望链接在新窗口或标签页中打开
+    btn.target = "_blank"; 
     btn.style.left = `${Math.random() * 90}vw`;
 
-    const animationDuration = 5 + Math.random() * 10; // 5到15秒的动画时间
+    const animationDuration = 5 + Math.random() * 10; 
     btn.style.animation = `fly ${animationDuration}s linear infinite`;
 
-    // 随机起始位置
     btn.style.bottom = `${Math.random() * 100}vh`;
 
-    // 为每个按钮设置一个随机的动画延迟，确保屏幕初始为空白
     btn.style.animationDelay = `-${Math.random() * animationDuration}s`; 
 
     btn.style.backgroundColor = getRandomColor();
@@ -85,15 +83,14 @@ function createButton(data) {
     container.appendChild(btn);
 }
 
-// 计算所需的按钮数量
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 const containerArea = screenWidth * screenHeight * 0.8;
-const averageButtonArea = 100 * 50; // 按钮的平均面积，假设为100px * 50px
+const averageButtonArea = 100 * 50; 
 const buttonCount = Math.ceil(containerArea / averageButtonArea);
 
-// 多次调用 createButton 方法来创建按钮
 for (let i = 0; i < buttonCount; i++) {
-	const index = i % buttonData.length; // 循环使用按钮数据
+	const index = i % buttonData.length;
 	createButton(buttonData[index]);
 }
+
