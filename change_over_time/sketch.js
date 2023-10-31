@@ -377,6 +377,6 @@ function drawBlinkingText() {
     // 设置文本属性
     textSize(32); // 根据CSS中未提供的具体值设置文本大小。你可能需要调整这个数值以匹配你的设计。
     textAlign(CENTER, CENTER); // 设置文本对齐方式
-    textFont('Proxima Nova', 'Bold'); // 使用'Proxima Nova'字体并设置字体粗细为'Bold'
+    textFont('Helvetica', 'Bold'); // 使用'Proxima Nova'字体并设置字体粗细为'Bold'
 
 }
