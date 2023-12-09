@@ -1,7 +1,7 @@
 window.addEventListener('scroll', function() {
     var scrollHeight = document.documentElement.scrollHeight;
-    var scrollPosition = window.scrollY + window.innerHeight;  // 计算滚动的总位置
-    var quoteElems = document.querySelectorAll('.quote');      // 获取所有的quote元素
+    var scrollPosition = window.scrollY + window.innerHeight;  
+    var quoteElems = document.querySelectorAll('.quote'); 
 
     quoteElems.forEach(function(quote) {
         var startPercentage = parseInt(quote.getAttribute('data-start'));
