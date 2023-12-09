@@ -21,7 +21,6 @@
     <div class="canvas">
     </div>
 
-    <!-- Modal Structure -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <h2>Chernobyl disaster still remains TODAY</h2>
@@ -113,7 +112,7 @@
 <script>
     document.getElementById('I-137').addEventListener('click', function () {
         console.log('I-137 clicked!');
-        lastClickedElement = 'star'; // 对应generateStars函数
+        lastClickedElement = 'star'; 
         generateStars();
         shouldDrawRectangle = true;
         drawBottomRectangle();
@@ -121,7 +120,7 @@
 
     document.getElementById('Cs-137').addEventListener('click', function () {
         console.log('Cs-137 clicked!');
-        lastClickedElement = 'circle'; // 对应generateCircles函数
+        lastClickedElement = 'circle'; 
         generateCircles();
         shouldDrawRectangle = true;
         drawBottomRectangle();
@@ -129,15 +128,14 @@
 
     document.getElementById('Sr-90').addEventListener('click', function () {
         console.log('Sr-90 clicked!');
-        lastClickedElement = 'triangle'; // 对应generateTriangles函数
-        generateTriangles();
+        lastClickedElement = 'triangle'; 
         shouldDrawRectangle = true;
         drawBottomRectangle();
     });
 
     document.getElementById('Pu-239').addEventListener('click', function () {
         console.log('Pu-239 clicked!');
-        lastClickedElement = 'square'; // 对应generateSquares函数
+        lastClickedElement = 'square';
         generateSquares();
         shouldDrawRectangle = true;
         drawBottomRectangle();
@@ -161,20 +159,15 @@
     })
 
     document.addEventListener('DOMContentLoaded', function () {
-        //调用方法获取日期差值
         document.getElementById('currentDate').innerText = getCurrentDateStr();
         daysSinceChernobylDisaster = calculateDaysSinceChernobyl();
 
-        // 获取当前日期元素
         const dateElement = document.getElementById('currentDate');
 
         dateElement.addEventListener('click', function () {
-            // 检查当前显示的日期
             if (dateElement.textContent === '04/26/1986') {
-                // 如果当前日期是04/26/1986，切换为当前日期
                 dateElement.textContent = getCurrentDateStr();
             } else {
-                // 否则，切换为04/26/1986
                 dateElement.textContent = '04/26/1986';
             }
             daysSinceChernobylDisaster = calculateDaysSinceChernobyl();

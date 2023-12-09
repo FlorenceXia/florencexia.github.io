@@ -67,9 +67,7 @@ const colors = [
 
 
 function getRandomColor() {
-
 	return colors[Math.floor(Math.random() * colors.length)];
-
 }
 
 
@@ -93,32 +91,24 @@ function createButton(data) {
     container.appendChild(btn);
 
 	const descriptionPreview = document.createElement('div');
-    descriptionPreview.innerText = data.description; // 使用预先定义的描述
+    descriptionPreview.innerText = data.description; 
     descriptionPreview.className = "preview";
     descriptionPreview.style.display = 'none';
     container.appendChild(descriptionPreview);
 
- 	// 当鼠标悬停在按钮上时的处理
     btn.onmouseover = function() {
-        // 停止按钮的动画
-        this.style.animationPlayState = 'paused';
-        
-        // 提高按钮的z-index
-        this.style.zIndex = '1000';
-        
-        // 显示描述预览
-        descriptionPreview.style.display = 'block';
-        descriptionPreview.style.left = `${this.getBoundingClientRect().right + 10}px`; // 在按钮右侧展示，并留有10px的间距
-        descriptionPreview.style.top = `${this.getBoundingClientRect().top}px`;  // 与按钮垂直对齐
+		this.style.animationPlayState = 'paused';
+	
+		this.style.zIndex = '1000';
+			
+		descriptionPreview.style.display = 'block';
+		descriptionPreview.style.left = `${this.getBoundingClientRect().right + 10}px`; 
+		descriptionPreview.style.top = `${this.getBoundingClientRect().top}px`; 
     };
 
-    // 当鼠标离开按钮时的处理
     btn.onmouseout = function() {
-        // 恢复按钮的动画和z-index
-        this.style.animationPlayState = 'running';
-        this.style.zIndex = '1';  // 将z-index重置回一个较低的值
-        
-        // 隐藏描述预览
+    	this.style.animationPlayState = 'running';
+        this.style.zIndex = '1';  
         descriptionPreview.style.display = 'none';
     };
 }
